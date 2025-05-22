@@ -12,6 +12,8 @@
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
   --border-radius: 8px;
+  --blog-color: #ff7f00;
+  --blog-dark: #e67300;
 }
 
 * {
@@ -903,7 +905,20 @@ p {
 
 @media (min-width: 768px) {
   .social-links-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .social-links-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .social-links-grid .social-card:last-child {
+    grid-column: span 2;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -932,6 +947,10 @@ p {
   margin-right: 15px;
   font-size: 1.8rem;
   color: var(--primary-color);
+}
+
+.social-title i.fa-blog {
+  color: var(--blog-color);
 }
 
 .social-description {
@@ -964,6 +983,18 @@ p {
   color: var(--white-color);
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(220, 39, 67, 0.4);
+}
+
+.blog-btn {
+  background: linear-gradient(45deg, var(--blog-color), var(--blog-dark));
+  box-shadow: 0 5px 15px rgba(255, 127, 0, 0.3);
+}
+
+.blog-btn:hover {
+  opacity: 0.9;
+  color: var(--white-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 127, 0, 0.4);
 }
 
 .recruit-btn {
